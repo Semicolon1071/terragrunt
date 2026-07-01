@@ -620,7 +620,7 @@ func TestStackDepsListLong(t *testing.T) {
 
 	assert.Contains(t, stdout, "Dependencies")
 
-	for _, line := range strings.Split(stdout, "\n") {
+	for line := range strings.SplitSeq(stdout, "\n") {
 		if !strings.Contains(line, "unit-w-inputs") {
 			continue
 		}
